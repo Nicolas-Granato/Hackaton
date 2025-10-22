@@ -60,11 +60,12 @@ def setupdatabase():
     df_dim_associacao_bovinos = df_dim_associacao_bovinos.rename(columns={"index","associacao_id"})
     df_dim_associacao_bovinos["associacao_id"] = "ab_" + df_dim_associacao_bovinos["associacao_id"].astype(str)
 
-    df_dim_ficha_lactacao = df_dim_ficha_lactacao.reset_inde()
+    df_dim_ficha_lactacao = df_dim_ficha_lactacao.reset_index()
     df_dim_ficha_lactacao = df_dim_ficha_lactacao.rename(columns={"index","ficha_id"})
     df_dim_ficha_lactacao["ficha_id"] = "fl_" + df_dim_ficha_lactacao["ficha_id"].astype(str)
 
-    df_bruto_ocorrencia_eventos = df_bruto_ocorrencia_eventos.reset_index()
-    df_bruto_ocorrencia_eventos = df_bruto_ocorrencia_eventos.rename(columns={"index","ocorrencias_id"})
-    df_bruto_ocorrencia_eventos["ocorrencias_id"] = "oe_" + df_bruto_ocorrencia_eventos["ocorrencias_id"].astype(str)
+    df_dim_ocorrencia_eventos = df_dim_ocorrencia_eventos.reset_index()
+    df_dim_ocorrencia_eventos = df_dim_ocorrencia_eventos.rename(columns={"index","ocorrencias_id"})
+    df_dim_ocorrencia_eventos["ocorrencias_id"] = "oe_" + df_dim_ocorrencia_eventos["ocorrencias_id"].astype(str)
+
 
